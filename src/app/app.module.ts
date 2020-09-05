@@ -22,6 +22,7 @@ import { BeerComponent } from './beer/beer.component';
     MatTableModule,
     MatSortModule,
     MatButtonModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

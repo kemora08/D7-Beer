@@ -1,1 +1,26 @@
-<button mat-raised-button="primary">New Beer</button>
+<button (click)= "newBeer()" mat-raised-button color="primary">New Beer</button>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" align="center" width="100%">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+    </ng-container>
+        <ng-container matColumnDef="tagline">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tagline </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.tagline}}</mat-cell>
+        </ng-container>
+            <ng-container matColumnDef="image_url">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Image_Url </mat-header-cell>
+                <mat-cell *matCellDef="let element"><img [src]="element.image_url"></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="abv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Abv </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.abv}}</mat-cell>
+</ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 15, 25]" showFirstLastButtons></mat-paginator>
