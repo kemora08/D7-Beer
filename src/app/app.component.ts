@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   async ngOnInit(): Promise<void> {
-    this.beers =  await this.dataService.getBeers();
+    this.beers = await this.dataService.getBeers();
   }
  }
 
