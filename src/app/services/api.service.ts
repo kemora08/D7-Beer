@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { IBeer } from '../i-beer';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class APIService {
 
   constructor(private httpService: HttpClient) { }
 
-  async get(path) {
-    return await this.httpClient.get<any[]>(this.url + path).toPromise();
+  async get(path: string, params?: HttpParams): Promise<IBeer[]> {
+    return this.httpService.get<IBeer[]>(path, {params}).toPromise();
   }
 
 }
