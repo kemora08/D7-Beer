@@ -7,16 +7,21 @@ import { MatTableModule} from '@angular/material/table';
 import { MatSortModule} from '@angular/material/sort';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatButtonModule} from '@angular/material/button';
+import { BeerComponent } from './beer/beer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BeerComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
